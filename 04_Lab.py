@@ -203,7 +203,7 @@
 
 #region soru - 6 
 
-#####* örnekkkk  kullanıcıdan alınan sayı asal mı değil mi test edelim
+#####* örnekkkk  kullanıcıdan alınan sayı asal mı değil mi test edelim.
 
 
 # sayi = int (input ('Bir sayı giriniz: '))
