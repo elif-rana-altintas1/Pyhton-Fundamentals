@@ -23,7 +23,7 @@
 # print(err)
 
 
-# except #! herhangi bir hata türü yazamazsak çekirdek (code) dosyalarındaki tüm hatalara bak anlamına gelir.(bütün hatalara bakar genelde tercih edilmez maliyeti yüksektir)
+# except #! herhangi bir hata türü yazamazsak çekirdek (code) dosyalarındaki tüm hatalara bak anlamına gelir.(bütün hatalara bakar genelde tercih edilmez maliyeti yüksektir).
 # print ('herhangi bir hata oluştu..!')
 
 
