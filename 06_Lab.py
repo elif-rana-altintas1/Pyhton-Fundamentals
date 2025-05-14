@@ -13,7 +13,7 @@
 
 # print(boxers[0]) #output mike tyson
 # print(boxers[4]) #output george foreman
-# #! Listeler RAM'DE saklanırlar bu yüzden uygulama kapatıldığında liste üzerinde yapılan işlemler silinir.
+# #! Listeler RAM'DE saklanırlar bu yüzden uygulama kapatıldığında liste üzerinde yapılan işlemler silinir
 
 # #? for loop ile listeler arasında item item dolaşabiliriz.
 # for boxer in boxers:
