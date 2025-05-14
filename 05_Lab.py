@@ -44,7 +44,7 @@
 
 
 
-#* örnek  faktöriyel hesaplama yapınız
+#* örnek  faktöriyel hesaplama yapınız.
 
 
 # sayi = int(input("Faktöriyeli alınacak sayıyı girin: "))
