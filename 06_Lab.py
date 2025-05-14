@@ -1,6 +1,6 @@
 
 #! List 
-#! Birbirinden farklı değerleri içerisinde depolayan bir yapıdır
+#! Birbirinden farklı değerleri içerisinde depolayan bir yapıdır.
 #? İndex mekanızması vardır. Yani listenin ilk elemanı 0. indexte tutulur.
 #?index pozitif yönde vektörel olarak artan miktarda oluşur.
 
