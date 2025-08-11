@@ -1,142 +1,82 @@
 
-#! List 
-#! Birbirinden farklı değerleri içerisinde depolayan bir yapıdır
-#? İndex mekanızması vardır. Yani listenin ilk elemanı 0. indexte tutulur.
-#?index pozitif yönde vektörel olarak artan miktarda oluşur.
+#! List
+#! Birbirinden farklı değerlei içerisinde depolayan bir yapdıdır.
+#? Index mekanizması vardır. Yani listenin ilk elemanı 0. indexte tutulur. Index pozitif yönde vektorel olara artan miktarda oluşr.
 
+# #* Aşağıda bir liste örneği bulunmaktadır.
+# boxers = ['mike tyson', 'muhammed ali', 'lenox lewis', 'evander holyfield', 'george foreman']
 
-#* aşağıda bir liste örneği bulunmaktadır.
+# #todo bir listenin elemanına onun index bilgisineden erişebiliriz
+# print(boxers[0]) # output: 'mike tyson'
+# print(boxers[4]) # output: 'george foreman'
 
-#boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman']
+# #! Listeler RAM'de saklanırlar bu yüzden uygulama kapatıldığında liste üzerinde yapılan işlemle silinir. 
 
-#todo bir listenin elemanına onun index bilgisineden erişebilriz
-
-# print(boxers[0]) #output mike tyson
-# print(boxers[4]) #output george foreman
-# #! Listeler RAM'DE saklanırlar bu yüzden uygulama kapatıldığında liste üzerinde yapılan işlemler silinir.
-
-# #? for loop ile listeler arasında item item dolaşabiliriz.
+# #? For loop ile bir liste içerisinde item item dolaşabiliriz
 # for boxer in boxers:
 #     print(boxer)
 
-#  #?boxers listesine 'antony jasua' bilgisini ekleyelim.    
-#  boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman']
-# degisken = 'antony jasua'
-# boxers.append(degisken)
+# #? boxers listesinin sonuna 'antony jasua' bilgisini ekleyelim
+# boxers.append('antony jasua')
 # print(boxers)
 
-#?boxers listesinin 4. indeksine ' deanyony wilder' bilgisini ekleyelim.
-# boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman']
-# degisken ='deanyony wilder'
-# boxers.insert(4,degisken)
+# #? boxers listesinin 4. indexsine 'deantony wilder' bilgisini ekleyelim
+# boxers.insert(4, 'deantony wilder')
 # print(boxers)
 
 
-#?'antony jasua' listeden silelim.
-
-# boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman','antony jasua']
+# #? 'antony jasua' bilgisni listeden silelim. 
 # boxers.remove('antony jasua')
-# print(boxers)
 
-# #?4. indexte tutulan bilgiyi silelim
-# boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman','antony jasua']
-# silinen=boxers.pop(4)
-# print(boxers)
-# print(silinen)
+# #? 4. indexte tutulan bilgiyi silelim
+# boxers.pop(4)
 
-# #?iki liste birleştirmek için ne yapmalıyız.
-# current_boxers = ['mike tyson','muhammed ali','lenox lewis','evander holyfield','george foreman','antony jasua']
+# current_boxers = ['antony jasua', 'tyson fury', 'deantony wilder']
 # boxers.extend(current_boxers)
 
-###########################################################################################
-#* Aşağıda random kütüphanesi içeriisnde bulunan randint fonksiyonunu çalışma sayfamıza ekledik
-#?randint fonksiyonu rastgele sayı üretmeye yarar
-
-# # from random import randint
-
-# # *10 tane rasgele sayı üret bunu da boş listeye ekle 
+#* aşağıda random kütüpanesi içerisinde bulunana randint fonksiyonunu çalışma sayfamıza ekledik
+#? randing fonksiyonu rastgele sayı üretmeye yarar.
 # from random import randint
-# sayilar = []
+
+# sayilar = []  # boş bir liste yarattık
+
 # for i in range(11):
-#     rastgele_sayi = randint(0,100)
-#     sayilar.append(rastgele_sayi)
+#     rastegele_sayi = randint(0, 100)
+#     sayilar.append(rastegele_sayi)
 
 # print(sayilar)
 
-#*kullanıcıdan bir söz öbeği alalım.Örneğin 'merhaba ben burak yılmaz'
-#*kullanıcıdan alınan bu söz öbeğindeki harflerin hepsini küçük harfe çevirelim
-#*ilgili söz öbeğindeki sesli harfler sesli harfler listesine
-#*sessiz harfler listesine eklensin
+#* Kullanıcıdan biz söz öbeği alalım. örneğin 'merhaba ben burak yılmaz'
+#* kullanıcııdan alınan bu söz öbeğindeki tüm harfler küçük harfe dönüştürülsün.
+#* ilgili söz öbeğindeki sesli harfler, sesli_harfler listesine
+#* sessiz harfler ise, sessiz_harfler listesine eklensin
+#* şayet kullanıcının girdiği ifade içerisinde rakam varsa bu karakter elensin
+#* sesli_harfler ve sessiz_harfler listelerine bir harf sadece bir kere eklensin
+#* söz öbeği içerisinde bir karakter varsa onuda elensin, örneğin burak1 yılmaz?
 
-# soz=input('bir söz öbeği girin:').lower()
+# word = input('Please type something: ').lower()
 
+# butun_sesli_harfler = 'aeıioöuü'
 
+# sesli_harfler = []
 
-# sesli_harfler = "aeıioöuü"
+# sessiz_harfler = []
 
-# sesliler = []
-# sessizler = []
-
-# for harf in soz:
-#     if harf in sesli_harfler: 
-#       sesliler.append(harf) 
-#     else:
-#         sessizler.append(harf)
-
-# print("Sesli Harfler:", sesliler)
-# print("Sessiz Harfler:", sessizler)
-
-#*rakam, boşluk , soru işareti girilirse karaktere eklensin
-#*yol 1 :
-# try:
-#     soz = input("Bir söz öbeği girin (rakam içermemeli): ").lower()
-
-#     if any(char.isdigit() for char in soz):
-#         raise ValueError("Rakam girilmemeli!")
-
-#     sesli_harfler = "aeıioöuü"
-#     sesliler = []
-#     sessizler = []
-
-#     for harf in soz:
-#         if harf.isalpha():  
-#             if harf in sesli_harfler and harf not in sesliler:
-#                 sesliler.append(harf)
-#             elif harf not in sesli_harfler and harf not in sessizler:
-#                 sessizler.append(harf)
-
-#     print("Sesli Harfler:", sesliler)
-#     print("Sessiz Harfler:", sessizler)
-
-# except ValueError as err:
-#     print("Hata:", err)
-
-#*Yol 2 :
-# soz=input('bir söz öbeği girin:').lower()
-
-
-
-# sesli_harfler = "aeıioöuü"
-
-# sesliler = []
-# sessizler = []
-
-# for harf in soz:
-#     #todo pyhton içerisinde built-in olarak bulunan bu fonskiyon ilgili harfin a-z yada A-Z aralığında olup olmadığını kontrol eder. şayet ilgili aralıkta ise True döner değilse False döner.
-
-#     if harf.isalpha(): 
-#         if harf not in sesliler and harf not in sessizler:
-#             if harf in sesli_harfler:
-#                 sesliler.append(harf) 
+# for c in word:
+#     #todo python içerisinde built-in olarka bulunan bu fonksiyon ilgili harfin a-z yada A-Z aralıüında olup olmadığını kontorol eder. şayet ilgili aralıkta ise True döner değilse False döner
+#     if c.isalpha():
+#         if c not in sesli_harfler and c not in sessiz_harfler:
+#             if c in butun_sesli_harfler:
+#                 sesli_harfler.append(c)
 #             else:
-#                 sessizler.append(harf)
+#                 sessiz_harfler.append(c)
 
-#     print("Sesli Harfler:", sesliler)
-#     print("Sessiz Harfler:", sessizler)
+# print(f'Sesli Harfler: {sesli_harfler}\nSessiz Harfler: {sessiz_harfler}')
 
-#*rastgele 10 tane sayı üretelim 0 ile 100 arasında olsun. üretilen bu sayıları lst_1 listesine dolduruyoruz. yukarıdaki işlemi lst_2 listesi için yapıyruz 
-#*lst_1 ve lst_2'nin indexlerine karşılık gelen değerleri toplayarak gene lst_3 ilgili indexine yazıyoruz
-#*tüm soruyu index mantığı kullanarak çözüyoruz (appnend kullanmayınız.)
+#* rastgele 10 tane sayı üretelim. 0 ile 100 arasında üretilen bu sayıları lst_1 listesinin içerisine dolduruyoruz
+#* yukarı işlemi lst_2 listesi için yapıyor.
+#* lst_1 ve lst_2'nin indexlerinde karşılıkle gelen değerleri toplayarak gene lst_3 ilgili indexsine yazıyoruz.
+#* tüm soruyu index mantığı kullanarak çözüyoruz. 
 
 # from random import randint
 
@@ -145,196 +85,232 @@
 # lst_3 = []
 
 # for i in range(10):
-#     lst_1.insert(i, randint(0, 100))  # randint() doğru şekilde çağrıldı
+#     lst_1.insert(i, randint(0, 100))
 #     lst_2.insert(i, randint(0, 100))
-#     lst_3.insert(i, lst_1[i] + lst_2[i])
+
+#     lst_3.insert(i, (lst_1[i] + lst_2[i]))
 
 # print(f'1. liste: {lst_1}\n2. liste: {lst_2}\n3. liste: {lst_3}')
 
 
-#*users =['burak yılmaz' , 'kerim can atlıhan' , 'elif rana esra altıntaş' , 'munzur' ]
-#*yukarıdaki  listedeki kullanıcılar için kurumsal mail adresi yaratalım
-#*inpur--> burak yılmaz
-#*output-->burak.yilmaz@bilgeadam.com gibi
 
-#*YOL 1:
- #users = ['burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur']
-
-# for user in users:
-#     # Kullanıcının ismini boşluklara göre ayır
-#     parcalar = user.split()
-    
-
-#     if len(parcalar) >= 2:
-#         ad = parcalar[0]
-#         soyad = parcalar[-1]
-#         mail = f"{ad}.{soyad}@bilgeadam.com"
-#     else:
-       
-#         mail = f"{parcalar[0]}@bilgeadam.com"
-    
-#     print(f'{user} -> {mail}')
-
-#*YOL 2:
-# mail_adresses=[]
-# for user in users:
-#     # Kullanıcının ismini boşluklara göre ayır
-#     parcalar = user.split()
-    
-#     mail_adresses=f'{user_names[0]}.{user_names[-1]}@bilgeadam.com'
-#     mail_adresses.append(mail_adresses)
-#     print(mail_adresses)
-
-#** Munzurun soyadı yok bunu dahil etmeden çözelim.
-# users = ['burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur']
-
-# mail_adresses=[]
-# for user in users:
-#  #Kullanıcının ismini boşluklara göre ayır
-#     parcalar = user.split()
-#     if len (parcalar)>1:
-
-#         mail_adresses=f'{user_names[0]}.{user_names[-1]}@bilgeadam.com'
-#         mail_adresses.append(mail_adresses)
-#     print(mail_adresses)
-
-
-# *users = ['   ipek' , 'burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur']
-#*ipek isminindeki boşlukları alma
-
-
-# mail_adresses = []
+# users = ['hakan yıl_maz', '', '   ipek', 'burak yilmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur']
+# # yukarı gele listedeki kullanıcılara kurumsal mail addresi yaratıyoruz.
+# # input --> burak yılmaz
+# # output --> burak.yilmaz@bilgeadam.com
+# mail_addresses = []
 
 # for user in users:
-#     user = user.strip()           # Baş/son boşlukları kaldır
-#     parcalar = user.split()       # Boşluklardan böl
 
-#     if len(parcalar) > 1:         # En az 2 parça varsa (isim + soyisim)
-#         mail = f"{parcalar[0]}.{parcalar[-1]}@bilgeadam.com"
-#         mail_adresses.append(mail)
+#     user_names = user.split(' ')
 
-# # Sonuçları yazdır
-# for adres in mail_adresses:
-#     print(adres)
-       
+#     is_item_condition = []
 
-#* users = ['hakan_yılmaz','   ipek' , 'burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur']
-
-
-# users = ['   ipek', 'burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur', 'hakan_yılmaz']
-
-# mail_adresses = []
-
-# for user in users:
-#     user = user.strip()
-#     if user.isalpha():
-    
-#         if len(users) > 1:
-#             mail = f"{parcalar[0]}.{parcalar[-1]}@bilgeadam.com"
-#             mail_adresses.append(mail)
-#     if user.isalpha():
-
-
-#         print(adres)
-
-
-
-#*users = ['hakan yıl_maz','   ipek', 'burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur', 'hakan_yılmaz']
-
-# mail_adresses = []
-
-# for user in users:
-#     user_names= user.split(' ') 
-#     is_item_consiation =[] 
 #     for item in user_names:
 #         if item.isalpha():
-#             is_item_consiation.append(True)
+#            is_item_condition.append(True)
 #         else:
-#             is_item_consiation.append(False)    
-            
-    
-#     if len(user_names) > 1:
-#         mail = f"{user_names[0]}.{user_names[-1]}@bilgeadam.com"
-#         mail_adresses.append(mail)
-        
- 
-###########! ANY
+#             is_item_condition.append(False)
 
-# users = ['hakan yıl_maz','   ipek', 'burak yılmaz', 'kerim can atlıhan', 'elif rana esra altıntaş', 'munzur', 'hakan_yılmaz']
-# mail_adresses = []
+#     if not any(i is False for i in is_item_condition):
 
-# for user in users:
-#     user_names= user.split(' ') 
-#     is_item_consiation =[] 
-#     for item in user_names:
-#          if item.isalpha():
-#             is_item_consiation.append(True)
-#          else:
-#              is_item_consiation.append(False)    
-#     if not any (i is False for i in is_item_consiation):  
-      
 #         if len(user_names) > 1:
-#             mail = f"{user_names[0]}.{user_names[-1]}@bilgeadam.com"
-#             mail_adresses.append(mail)
 
+#             mail_address = f'{user_names[0]}.{user_names[-1]}@bilgeadam.com'
 
+#             mail_addresses.append(mail_address)
 
-#!!!!! Nested List
+# print(mail_addresses)
 
-# semtler=[
-#     ['Sarıyer','Beşiktaş','Ulus'],
-#     ['Suadiye','Feneryolu'],
-#     ['Bebek', ['Hacıhüsrev','Tarlabaşı']],
-#     ['ataköy','Bakırköy','Yeşilköy']
+# #! Nested List
+# semtler = [
+#     ['Sarıyer', 'Beşiktaş', 'Ulus'],
+#     ['Suadiye', 'Feneryolu'],
+#     ['Bebek', ['Hacıhüsrev', 'Tarlabaşı']],
+#     ['Ataköy', 'Bakırköy', 'Yeşilköy']
 # ]
 
-# print(semtler[0]) #['Sarıyer','Beşiktaş','Ulus']
-# print(semtler[0][2]) #Ulus
-# print(semtler[2][1][0]) #Hacıhüsrev
+# print(semtler[0]) #? ['Sarıyer', 'Beşiktaş', 'Ulus']
+# print(semtler[0][2]) #? 'Ulus'
+# print(semtler[2][1][0]) #? 'Hacıhüsrev'
 
-#*örnek
-# my_family=[
-#     ['Burak Yılmaz','beast',36],
-#     ['Hakan Yılmaz', 'savage',39],
-#     ['İpek Yılmaz','keko',41],
+# #! Unboxing
+
+# my_family = [
+#     ['Burak Yılmaz', 'beast', 36],
+#     ['Hakan Yılmaz', 'savage', 39],
+#     ['ipek Yılmaz', 'keko', 41],
 # ]
 
-# for full_name, user_name,age in my_family: #!Kutudan çıkartma 
-#     print(f'Full name:{full_name}\nUser Name: {user_name}\nAge: {age}')
+# for full_name, user_name, age in my_family:
+#     print(f'Full Name: {full_name}\nUser Name: {user_name}\nAge: {age}')
 
-#? ÖDEV aşağıdaki listede bulunan kullanıcıların şifrelerini hash'leyerek aynı kullanıcının listesine yazınız 
 
-from hashlib import sha256
+# from hashlib import sha256
 
+# # aşağıdaki listede bulunan kullanıcıların şifrelerini hash'leyerek aynı kullanıcının listesine ekleyin
+# users = [
+#     ['beast', '123'], 
+#     ['savage', '987'],
+#     ['bear', '578']
+# ]
+
+# counter = 0
+# for username, password in users:
+#     hash_object = sha256(password.encode())
+#     hashed_password = hash_object.hexdigest()
+#     users[counter].remove(password)
+#     users[counter].append(hashed_password)
+#     counter += 1
+
+# print(users)
+
+
+# List Coprehansion
+# lst = [i for i in range(10)]
+# print(lst)
+
+# # rakamların karelerini barındıran listeyi hazırlayın
+# print([i * i for i in range(10)])
+
+# # 0 ile 100 arasında 3 tam bölünen sayıları içeren listeyi hazırlayın
+# print([i ** 3 for i in range(100) if i % 3 == 0])
+
+
+#* for i in range(1, 11):
+#*     for j in range(1, 11):
+#*         print(f'{i} x {j} = {i * j}')
+#*     print('============')
+
+# print([[f'{i} x {j} = {i * j}' for j in range(1, 11)] for i in range(1, 11)])
+
+
+# from random import randint
+
+# print([randint(0, 100) for i in range(10)])
+
+# any(): bir liste içerisinde tüm değerler küçük harfi, digit mi?, liste içerisinde username 'beast' olan var mı? liste içerisinde ki değerler alfabetik mi?
+# from string import punctuation
+
+# full_name = 'burak _yılmaz'
+# if any(harf in punctuation for harf in full_name):
+#     print('İsim noktalama işareti içerisyor..!')
+# else:
+#     print('İçemiyor..!')
+
+# katilimcilar = ['Baran', 'Emre', 'Elif', 'Munzur']
+# isim = input('Aradığınız katılımcı adını giriniz: ')
+# if any(isim == kalitimci for kalitimci in katilimcilar):
+#     print('Aradığınız katılımcı burada')
+# else:
+#     print('Katılmamıştır..!')
+
+# password = 'burak1'
+
+# if any(harf.isdigit() for harf in password):
+#     print('rakam içeririr')
+# else:
+#     print('rakam içermez')
+
+# if not any(harf.isdigit() for harf in password):
+#     print('rakam içermez')
+# else:
+#     print('rakam içeririr')
+
+# all(): liste içerisinde ki tüm değerler aynı ise True değilse False dönder
+# numbers: list[int] = [1, 2, 6, 4, 5]
+# print(all(numbers))
+
+# mixed_list = [1, 2, None, 4, 5]
+# print(all(mixed_list))
+
+
+# print(all([x > 0 for x in range(-5, 5)]))
+
+
+
+# filter(): Bu fonksiyon vasıtasyıla bir liste içerisinden sadece istediğim değerleri çekiyorum yani listemi filtreliyorum
+# values = [0, '', 1, 'Python', None, True, 3.14, False]
+# result = filter(None, values)
+# print(list(result))
+
+
+# numbers = [-2, -10, 0 , 5, 6]
+# positives = filter(lambda x: x > 0, numbers)
+# print(list(positives))
+
+# aşağıdaki listende çift sayıları fitreleyin
+# numbers = [1, 2, 3, 4, 6]
+# evens = filter(lambda x: x % 2 == 0, numbers)
+# print(list(evens))
+
+
+# meyveler = ['elma', 'armut', 'karpuz', 'çilek', 'muz']
+# # karpuz bilgisini fitreleyin
+# meyve = list(filter(lambda x: x == 'karpuz', meyveler))
+# print(meyve)
+
+# users = ['savage', 'beast', 'bear']
+# # içinde z geçmeyen kullanıcıları filtreleyin
+# contains_z = list(filter(lambda x: 'z' in x, users))
+# not_contains_z = list(filter(lambda x: 'z' not in x, users))
+
+
+# map(): verilerin tiplerini değiştirir.
+years = [i for i in range(1923, 2026)]
+
+print(years)
+
+str_years = list(map(str, years))
+print(str_years)
+
+# enumarate(): bir listenin index ve o index'te tutulan değerini verir.
+for index, value in enumerate(years):
+    print(f'Incex: {index} - Value: {value}')
+
+# Walrus Operatör
+# aynı anda hem if kontrolü hemde değer ataması yapılabilinir. List Comprehsion yoğun olarak tercih edilir.
+if (n := len('merhaba')) > 5:
+    print(f'{n}')
+
+sayilar = [1, 2, 3, 4, 5]
+
+print([y for x in sayilar if (y := x * 2) > 6])
+
+# password is valid?
+# kullanıcıdan bir password alıyoruz
+# ilgiil password en az 16 karakterli olmalı
+# en az bir büyük harf içermlei, bir küçük harf içermeli
+# en az bir noktalama işareti içermeli
+# en az bir rakam içermeli
+# burakBurak1?burak
+
+from string import punctuation
+
+conditions = []
 users = [
-    ['beast', '123'],
-    ['savage', '987'],
-    ['bear', '578']
+    # ['username', 'password']
 ]
 
-for username , password in users:
-    
-    # Şifreyi SHA-256 ile hashle
-    hashed_object = sha256(password.encode()) #1 2 3 ü parçaladı
-    hashed_password=hashed_object.hexdigest()
+user_name = input('Please type your user name: ')
+password = input('Please type your password: ')
 
-    
-   
-    print(hashed_password)
+if len(password) <= 16:
+    conditions.append(False)
+if not any(c.isupper() for c in password):
+    conditions.append(False)
+if not any(c.islower() for c in password):
+    conditions.append(False)
+if not any(c.isdigit() for c in password):
+    conditions.append(False)
+if not any(c in punctuation for c in password):
+    conditions.append(False)
 
-
-   
-
-#*YARINA HAZIRLIK 
-
-#? list coprehansion :Python'da daha kısa ve okunabilir şekilde liste oluşturmak için kullanılan bir yapıdır. Döngü (for) ve if gibi ifadeleri tek satıra sığdırır.
-
-#?any() :bir iterable (liste, demet, set, vs.) içindeki en az bir eleman True ise True döner.Hiçbiri True değilse False döner.
-
-#?all() :verilen bir iterable'daki (liste, tuple, set vs.) bütün elemanlar True ise True döner.Eğer bir tanesi bile False ise, sonuç False olur.
-
-#?filter() :bir fonksiyon ve iterable (liste, tuple, vs.) alır.Fonksiyon True döndürdüğü elemanları süzerek geri verir.
-
-
+if not any(x is False for x in conditions):
+    print('Your account has been created..!')
+    users.append([user_name, password])
+    print(users)
+else:
+    print('Invalid credentials..!')
 
 
