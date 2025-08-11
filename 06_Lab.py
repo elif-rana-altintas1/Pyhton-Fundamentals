@@ -304,7 +304,7 @@
 
 #? ÖDEV aşağıdaki listede bulunan kullanıcıların şifrelerini hash'leyerek aynı kullanıcının listesine yazınız 
 
-import hashlib
+from hashlib import sha256
 
 users = [
     ['beast', '123'],
@@ -312,20 +312,18 @@ users = [
     ['bear', '578']
 ]
 
-for user in users:
-    username = user[0]
-    password = user[1]
-
+for username , password in users:
+    
     # Şifreyi SHA-256 ile hashle
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    hashed_object = sha256(password.encode()) #1 2 3 ü parçaladı
+    hashed_password=hashed_object.hexdigest()
 
-    # Hashlenmiş şifreyi kullanıcı listesine ekle
-    user.append(hashed_password)
-
-for user in users:
-    print(user)
+    
+   
+    print(hashed_password)
 
 
+   
 
 #*YARINA HAZIRLIK 
 
